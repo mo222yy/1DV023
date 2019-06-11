@@ -1,0 +1,36 @@
+<script>
+  socket.on('message', (data) => {
+    let action = data.action
+    let comment = 'comment' in data ? true : false
+    let issueTitle = data.issue.title
+    let user = data.sender.login
+    let avatarUrl = data.sender.avatar_url
+    let title = data.issue.title
+   
+    let notifications  = document.querySelector('.notifications')
+    
+    let notificationBody = document.createElement('div')
+    notificationBody.setAttribute('class', 'notificationBody')
+    
+    let textDiv = document.createElement('div')
+    textDiv.setAttribute('class', 'textDiv')
+
+    let notification = document.createElement('p')
+    notification.setAttribute('class', 'notificationText')
+    notification.textContent = comment === true ? `${user} ${action} a comment on issue: ${title}` : `Issue ${title} was ${action} by ${user}` 
+
+    let avatarDiv = document.createElement('div')
+    avatarDiv.setAttribute('class', 'avatarDiv')
+
+    let avatarImg = document.createElement('img')
+    avatarImg.setAttribute('class', 'avatar')
+    avatarImg.setAttribute('src', `${avatarUrl}`)
+
+    notifications.appendChild(notificationBody)
+    notificationBody.appendChild(textDiv)
+    textDiv.appendChild(notification)
+    notificationBody.appendChild(avatarDiv)
+    avatarDiv.appendChild(avatarImg)
+  })
+
+  </script>

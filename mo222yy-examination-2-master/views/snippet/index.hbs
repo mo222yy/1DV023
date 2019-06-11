@@ -1,0 +1,21 @@
+    <div class="snippetIndex">
+        {{#if locals.snippetItems.length }}
+        {{#each locals.snippetItems}}
+        <div class="snippet">
+            <a class="snippetLink" href="/snippet/view/{{this.id}}">
+            <div class="snippetHeader">
+                <p class="description">{{this.description}}</p>
+            </div>
+             </a>
+        <textarea readonly name="body" class="textareaIndex">{{this.body}}</textarea>
+            <div class="snippetFooter">
+                <span class="username">{{this.username}}</span>
+                <a href="/snippet/edit/{{this.id}}"><span class="far fa-edit"></span></a>
+                <a href="/snippet/delete/{{this.id}}"><span class="far fa-trash-alt"></span></a>
+            </div>
+        </div>
+        {{/each}}
+        {{else}}
+            <h1>No snippets to display</h1>
+        {{/if}}
+    </div>

@@ -1,0 +1,11 @@
+<div id="indexPage">
+    <h1>Welcome to codeSnippets {{authenticated.username}}</h1>
+   
+    <div id="indexButtons">
+         {{#unless authenticated}}
+        <a class="btn btn-primary" href="/user/create" role="button">Create Account</a>
+        <a class="btn btn-primary" href="/user/login" role="button">Log in</a>
+        {{/unless}}
+    </div>
+    <a id="viewSnippetsButton" class="btn btn-primary" href="/snippet" role="button">View snippets</a>
+</div>

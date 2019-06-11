@@ -1,0 +1,52 @@
+<script> 
+    socket.on('addIssue', (data) => {
+    let d = data.issue
+
+    let card = document.createElement('div')
+    card.setAttribute('class', 'card')
+    card.setAttribute('style', 'width: 18rem')
+
+    let link = document.createElement('a')
+    link.setAttribute('href', `${d.html_url}`)
+
+    let title = document.createElement('h5')
+    title.setAttribute('class', 'card-title')
+    title.textContent = d.title
+
+    let issueContent = document.createElement('p')
+    issueContent.setAttribute('class', 'card-issueContent')
+    issueContent.textContent = d.body
+
+    let cardFooter = document.createElement('div')
+    cardFooter.setAttribute('class', 'cardFooter')
+
+    let timeCreated = document.createElement('p')
+    timeCreated.setAttribute('class', 'timeCreated')
+    timeCreated.textContent = data.created
+
+    let comments = document.createElement('p')
+    comments.setAttribute('class', 'numberOfComments')
+    comments.textContent = `Number of comments: ${d.comments}`
+
+    let timeUpdated = document.createElement('p')
+    timeUpdated.setAttribute('class', 'timeUpdated')
+    timeUpdated.textContent = data.updated
+
+    let id = document.createElement('p')
+    id.setAttribute('class', 'issueId')
+    id.textContent = d.id
+
+    let issueList = document.querySelector('#issueList')
+    issueList.insertBefore(card, issueList.firstChild)
+    card.appendChild(link)
+    link.appendChild(title)
+    card.appendChild(issueContent)  
+    card.appendChild(cardFooter)
+    cardFooter.appendChild(timeCreated)
+    cardFooter.appendChild(comments)
+    cardFooter.appendChild(timeUpdated)
+    card.appendChild(id)
+    })
+</script>
+
+

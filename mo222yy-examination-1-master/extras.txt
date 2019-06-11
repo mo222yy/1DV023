@@ -1,0 +1,11 @@
+main server: http://vhost3.lnu.se:20080/weekend
+alternative server: http://cscloud304.lnu.se:8080/
+
+Movies:
+
+Status: 0 = booked, 1 = available
+day: 05 = friday
+     06 = saturday
+     07 = sunday
+
+    

@@ -1,0 +1,38 @@
+
+
+<div id="issueList">
+
+{{#each issues}}
+
+<div class="card" style="width: 18rem;">
+    <a href="{{this.link}}">
+    <h5 class="card-title">{{this.title}}</h5>
+    </a>
+    <p class="card-issueContent">{{this.body}}</p>
+    <div class="cardFooter">
+      <p class="timeCreated">Created at {{this.created}}</p>
+      <p class="numberOfComments">Number of comments: {{this.comments}}</p>
+      <p class="timeUpdated">Updated at {{this.updated}}</p>
+    </div>
+    <p class="issueId">{{this.id}}</p>
+</div>
+{{/each}}
+</div>
+
+<div class="notifications">
+  <div class="notificationHeader">
+  <p>Notifications</p>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+ var socket = io()
+ </script>
+{{>webhook/messages}}
+{{>webhook/comments}}
+{{>webhook/edit}}
+{{>webhook/delete}}
+{{>webhook/add}}
+
+

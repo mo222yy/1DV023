@@ -1,0 +1,35 @@
+{
+  "name": "assignment1",
+  "version": "1.0.0",
+  "description": "Assignment 1, course 1DV023, Linnaeus University",
+  "main": "app.js",
+  "devDependencies": {
+    "standard": "*"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "lint": "standard | snazzy || true"
+  },
+  "keywords": [
+    "WebScraper"
+  ],
+  "author": "Martin Olsson, mo222yy",
+  "license": "ISC",
+  "dependencies": {
+    "Base64": "^1.0.1",
+    "async-request": "^1.2.0",
+    "base-64": "^0.1.0",
+    "btoa": "^1.2.1",
+    "cheerio": "^1.0.0-rc.2",
+    "fetch-cookie": "^0.7.2",
+    "fs-extra": "^7.0.1",
+    "headers": "^0.9.6",
+    "jar": "^0.3.4",
+    "jsdom": "^13.2.0",
+    "node-fetch": "^2.3.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "request-promise-native": "^1.0.5",
+    "snazzy": "^8.0.0"
+  }
+}

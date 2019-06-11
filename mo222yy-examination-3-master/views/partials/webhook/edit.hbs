@@ -1,0 +1,28 @@
+<script>
+  socket.on('editIssue', (data) => {
+   
+    let issue = data.issue
+    let id = issue.id.toString()
+    let issueIdList = document.querySelectorAll('.issueId')
+    let issueToUpdate
+
+    issueIdList.forEach(issue => {
+      if (issue.textContent === id) {
+        issueToUpdate = issue
+      }
+    })
+    let card = issueToUpdate.parentNode
+    let cardChildNodes = card.children
+
+    let title = cardChildNodes[0].children[0]
+    title.textContent = issue.title
+
+    let body = cardChildNodes[1]
+    body.textContent = issue.body
+
+    let footer = cardChildNodes[2]
+    let updated = footer.childNodes[5]
+
+    updated.textContent = `Updated at ${data.updated}`
+  })
+</script>

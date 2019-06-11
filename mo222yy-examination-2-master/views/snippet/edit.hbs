@@ -1,0 +1,15 @@
+<form method="post" action="/snippet/edit">
+  <h2>Edit snippet</h2>
+  <input type="hidden" name="id" value="{{locals.id}}" />
+
+  <div class="group">
+    <input type="text" id="description" placeholder="Snippet description" name="description" value="{{locals.description}}"required="required" autofocus="autofocus" />
+    <label for="name">Description</label>
+  </div>
+
+  <div class="group">
+    <textarea id="body" name="body" class="textarea" placeholder="Enter your snippet here">{{locals.body}}</textarea>
+    <label for="body">Snippet</label>
+  </div>
+  <button type="submit" class="btn btn-lg btn-primary">Update</button>
+</form>

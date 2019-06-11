@@ -1,0 +1,14 @@
+<script>
+  socket.on('removeIssue', (issueId) => {
+    let id = issueId.toString()
+    let issueIdList = document.querySelectorAll('.issueId')
+    let issueToRemove
+
+    issueIdList.forEach(issue => {
+      if (issue.textContent === id) {
+        issueToRemove = issue
+      }
+    })
+    issueToRemove.parentNode.remove()
+  })
+</script>

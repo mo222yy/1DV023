@@ -1,0 +1,15 @@
+<script>
+  socket.on('updateComments', (data) => {
+    let id = data.issue.id.toString()
+    let issueIdList = document.querySelectorAll('.issueId')
+    let issueToUpdate
+
+    issueIdList.forEach(issue => {
+      if (issue.textContent === id) {
+        issueToUpdate = issue
+      }
+    })
+    let card = issueToUpdate.parentNode
+    card.children[2].children[1].textContent = `Number of comments: ${data.issue.comments + 1}`
+  })
+</script>
